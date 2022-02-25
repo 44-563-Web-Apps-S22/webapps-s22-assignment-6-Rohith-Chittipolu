@@ -21,8 +21,8 @@
 <p id="result">This text will be replaced </p>
 
 <script> 
-var correct=0
-var wrong=0
+var correct=0;
+var wrong=0;
 function checkGuess(){
     console.log("Getting form values")
     name = document.getElementById("form1_name").value
@@ -30,12 +30,14 @@ function checkGuess(){
     out = document.getElementById("result")
     if(name==guess)
     {
-        correct=correct+1
-        out.innerHTML = "You got it right"
+        correct=correct+1;
+        alert("You got it right")
+        out.innerHTML = correct
     }
     else{
-        wrong=wrong+1
-        out.innerHTML= "Wrong President"
+        wrong=wrong+1;
+        alert("Wrong President")
+        out.innerHTML= wrong
     }
     
 }
