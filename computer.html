@@ -21,9 +21,19 @@
 
     <input type="button" onclick="orderComputer()" value="Order a computer">
   </form>
+  <form>
+    <label for="eng">Enter a property name </label>
+    <input type ="text" id="eng" name="engrave"  value="engraved"> <br>
+
+    <label for="val">Enter a value </label>
+    <input type ="text" id="val" name="value" autofocus> <br>
+
+    <input type="button" onclick="updateComputer()" value="Update the computer">
+</form>
 
 
   <p id="result">output</p>
+  <p id="updatedresult">new property</p>
 
   <script> 
  var my_computer ={};
@@ -35,7 +45,7 @@
     my_computer["mem"]=false;
     my_computer["mou"]=false;
     my_computer["cel"]=false;
-    //my_computer= new Object(memory,mouse,cell);
+    
     if(mem.checked){
         my_computer["mem"]=true;
         
@@ -54,48 +64,17 @@
       
     }
     document.getElementById("result").innerHTML = "Extra Memory :" + my_computer.mem + ",  " +"Mouse : "+ my_computer.mou + ",  " + "Cell : " + my_computer.cel ;
-    //document.getElementById("result").innerHTML = "my_Computer[]{ Extra Memory :" + my_computer.mem + ",  " +"Mouse : "+ my_computer.mou + ",  " + "Cell : " + my_computer.cel +" }"
-
-   //{ Extra Memory :" + my_computer.mem + ",  " +"Mouse : "+ my_computer.mou + ",  " + "Cell : " + my_computer.cel +" }"
 }
-
-    /*if(!mem.checked | mou.checked | cel.checked)
-    {
-        alert("Please choose any option")
-    }
-    
- 
- }*/
-/*
-<form>
-    <label for="form1_age">What is your age </label>
-    <input type ="number" id="form1_age" name="form1_age" min=10 max=50 step=2 value=30> <br>
-
-    <label for="form1_nick">What is your nickname </label>
-    <input type ="text" id="form1_nick" name="form1_nick" autofocus> <br>
-
-    <input type="button" onclick="resolveForm()" value="Get values from form">
-</form>
-
-
-
-<p id="result">This text will be replaced </p>
-
-<script> 
-
-function resolveForm (){
+function updateComputer(){
     console.log("Getting form values")
-    age = document.getElementById("form1_age").value
-    nick = document.getElementById("form1_nick").value
-    confirmed = confirm("Are these the values? "+age+" and "+nick)
+    prop = document.getElementById("eng").value
+    valu = document.getElementById("val").value
+    my_computer["prop"]=valu;
+
+    document.getElementById("updatedresult").innerHTML="Extra Memory :" + my_computer.mem + ",  " +"Mouse : "+ my_computer.mou + ",  " + "Cell : " + my_computer.cel+" , New Property: " +my_computer.prop;
+    //out = document.getElementById("result")
     
-    out = document.getElementById("result")
-    if(confirmed){
-        out.innerHTML = "Values were confirmed"
-    } else {
-        out.innerHTML = "Values were not confirmed"
-    }
-}*/
+}
 </script>
 
 </body>
