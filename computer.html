@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+ 
+<body>
+<head><title>Checkbox</title></head>
+<body>
+
+<h2>Rohith Chittipolu orders a computer.</h2>
+<form>
+    <input type="checkbox" id="cb1_mem" name="Memory"   
+      value="extra">
+    <label for="cb1_mem">Extra memory</label></br>
+  
+    <input type="checkbox" id="cb1_mou" name="mouse" 
+       value="mouse">
+    <label for="cb1_mou">Mouse</label></br>
+  
+    <input type="checkbox" id="cb1_ce" name="cell"   
+       value="cell" >
+    <label for="cb1_ce">Cell service</label></br>
+
+    <input type="button" onclick="orderComputer()" value="Order a computer">
+  </form>
+
+
+  <p id="result">output</p>
+
+  <script> 
+ var my_computer ={};
+ 
+ function orderComputer(){
+    mem = document.getElementById("cb1_mem")
+    mou = document.getElementById("cb1_mou")
+    cel = document.getElementById("cb1_ce")
+    my_computer["mem"]=false;
+    my_computer["mou"]=false;
+    my_computer["cel"]=false;
+    //my_computer= new Object(memory,mouse,cell);
+    if(mem.checked){
+        my_computer["mem"]=true;
+        
+    }
+    
+    
+    if(mou.checked){
+      
+        my_computer["mou"]=true;
+        
+    }
+    
+    
+    if(cel.checked){
+        my_computer["cel"]=true;
+      
+    }
+    document.getElementById("result").innerHTML = "Extra Memory :" + my_computer.mem + ",  " +"Mouse : "+ my_computer.mou + ",  " + "Cell : " + my_computer.cel ;
+    //document.getElementById("result").innerHTML = "my_Computer[]{ Extra Memory :" + my_computer.mem + ",  " +"Mouse : "+ my_computer.mou + ",  " + "Cell : " + my_computer.cel +" }"
+
+   //{ Extra Memory :" + my_computer.mem + ",  " +"Mouse : "+ my_computer.mou + ",  " + "Cell : " + my_computer.cel +" }"
+}
+
+    /*if(!mem.checked | mou.checked | cel.checked)
+    {
+        alert("Please choose any option")
+    }
+    
+ 
+ }*/
+/*
+<form>
+    <label for="form1_age">What is your age </label>
+    <input type ="number" id="form1_age" name="form1_age" min=10 max=50 step=2 value=30> <br>
+
+    <label for="form1_nick">What is your nickname </label>
+    <input type ="text" id="form1_nick" name="form1_nick" autofocus> <br>
+
+    <input type="button" onclick="resolveForm()" value="Get values from form">
+</form>
+
+
+
+<p id="result">This text will be replaced </p>
+
+<script> 
+
+function resolveForm (){
+    console.log("Getting form values")
+    age = document.getElementById("form1_age").value
+    nick = document.getElementById("form1_nick").value
+    confirmed = confirm("Are these the values? "+age+" and "+nick)
+    
+    out = document.getElementById("result")
+    if(confirmed){
+        out.innerHTML = "Values were confirmed"
+    } else {
+        out.innerHTML = "Values were not confirmed"
+    }
+}*/
+</script>
+
+</body>
+</html> 
